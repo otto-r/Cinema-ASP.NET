@@ -40,9 +40,9 @@ namespace CinemaWeb.Models
             }
         }
 
-        public int SeatsLeft(int seatsTotal, int patronsInShowList)
+        public int SeatsLeft(int patronsBooked, int seatsTotal)
         {
-            return seatsTotal - patronsInShowList;
+            return seatsTotal - patronsBooked;
         }
 
         public int SeatsLeftNew()

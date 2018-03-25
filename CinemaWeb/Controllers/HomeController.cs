@@ -35,5 +35,18 @@ namespace CinemaWeb.Controllers
 
             return View(tt);    
         }
+
+        public async Task<IActionResult> Booking(int id)
+        {
+            var show = await contextCinema.Shows.Include(s => s.Movie).Include(s => s.Theater).Include(s => s.Patrons).SingleAsync(r => r.Id == id);
+            //var show = contextCinema.Shows.FirstOrDefault(r => r.Id == id);
+
+            if (show == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(show);
+        }
     }
 }
