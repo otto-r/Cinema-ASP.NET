@@ -1,0 +1,13 @@
+﻿body {
+}
+
+.MovieBox{
+    border: 1px solid black;
+    margin: 5px;
+    width: 250px;
+    /*float: left;*/
+}
+
+.FullMovie{
+    background: red;
+}

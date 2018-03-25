@@ -1,0 +1,11 @@
+C:\Users\Otto\Dropbox\Programming\Webb\Labbar\LAB3 - MVC ASP core\CinemaWeb\CinemaWeb\bin\Debug\netcoreapp2.0\CinemaWeb.deps.json
+C:\Users\Otto\Dropbox\Programming\Webb\Labbar\LAB3 - MVC ASP core\CinemaWeb\CinemaWeb\bin\Debug\netcoreapp2.0\CinemaWeb.runtimeconfig.json
+C:\Users\Otto\Dropbox\Programming\Webb\Labbar\LAB3 - MVC ASP core\CinemaWeb\CinemaWeb\bin\Debug\netcoreapp2.0\CinemaWeb.runtimeconfig.dev.json
+C:\Users\Otto\Dropbox\Programming\Webb\Labbar\LAB3 - MVC ASP core\CinemaWeb\CinemaWeb\bin\Debug\netcoreapp2.0\CinemaWeb.dll
+C:\Users\Otto\Dropbox\Programming\Webb\Labbar\LAB3 - MVC ASP core\CinemaWeb\CinemaWeb\obj\Debug\netcoreapp2.0\CinemaWeb.csprojResolveAssemblyReference.cache
+C:\Users\Otto\Dropbox\Programming\Webb\Labbar\LAB3 - MVC ASP core\CinemaWeb\CinemaWeb\obj\Debug\netcoreapp2.0\CinemaWeb.csproj.CoreCompileInputs.cache
+C:\Users\Otto\Dropbox\Programming\Webb\Labbar\LAB3 - MVC ASP core\CinemaWeb\CinemaWeb\obj\Debug\netcoreapp2.0\CinemaWeb.AssemblyInfoInputs.cache
+C:\Users\Otto\Dropbox\Programming\Webb\Labbar\LAB3 - MVC ASP core\CinemaWeb\CinemaWeb\obj\Debug\netcoreapp2.0\CinemaWeb.AssemblyInfo.cs
+C:\Users\Otto\Dropbox\Programming\Webb\Labbar\LAB3 - MVC ASP core\CinemaWeb\CinemaWeb\bin\Debug\netcoreapp2.0\CinemaWeb.pdb
+C:\Users\Otto\Dropbox\Programming\Webb\Labbar\LAB3 - MVC ASP core\CinemaWeb\CinemaWeb\obj\Debug\netcoreapp2.0\CinemaWeb.dll
+C:\Users\Otto\Dropbox\Programming\Webb\Labbar\LAB3 - MVC ASP core\CinemaWeb\CinemaWeb\obj\Debug\netcoreapp2.0\CinemaWeb.pdb
