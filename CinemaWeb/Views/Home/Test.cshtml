@@ -1,0 +1,23 @@
+﻿@model List<CinemaWeb.Models.Show>
+
+
+@{
+    ViewData["Title"] = "Test";
+}
+
+<h2>Test</h2>
+@foreach (var show in Model)
+{
+    <div>
+        <strong>
+            @show.Movie.Name
+        </strong>
+        <ul>
+            <li>@show.TimeStart.ToString("HH:mm") - @show.TimeEnd.ToString("HH:mm")</li>
+            <li> @show.Id: @show.Theater.Name</li>
+        </ul>
+    </div>
+}
+
+<div>Test test</div>
+
