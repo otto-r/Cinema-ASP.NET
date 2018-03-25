@@ -7,19 +7,24 @@
     ViewData["Title"] = "Otto's Cinema";
 }
 <script>
-    function test() {
+    function displayDate() {
         document.getElementById("listDate").style.display = 'block';
+        document.getElementById("listSeats").style.display = 'none';
+    }
+    function displaySeats() {
+        document.getElementById("listSeats").style.display = 'block';
+        document.getElementById("listDate").style.display = 'none';
     }
 </script>
 
 <h2>
     Movies
 </h2>
-<button onclick="test()">Date</button>
-<button onclick="test()">Seats left</button>
+<button onclick="displayDate()">Date</button>
+<button onclick="displaySeats()">Seats left</button>
 
-<div id="listDate">
-    @foreach (var show in Model.OrderBy(s => s.Patrons.Count()))
+<div id="listSeats" style="display: none;">
+    @foreach (var show in Model.OrderBy(s => (s.Patrons.Count - s.Theater.TheaterCapacity)))
     {
         <div>
             <strong>
@@ -48,7 +53,7 @@
     }
 </div>
 
-@*<div id="listSeats">
+<div id="listDate" style="display: block;">
         @foreach (var show in Model.GroupBy(s => s.TimeStart.Date))
         {
             <div>
@@ -57,12 +62,12 @@
                 </strong>
                 @foreach (var item in show)
                 {
-                    @if (@item.SeatsLeft(item.BookedPatrons.Count(), item.Theater.TheaterCapacity) != 0)
+                    @if (@item.SeatsLeft(item.Patrons.Count(), item.Theater.TheaterCapacity) != 0)
                     {
                         <div class="MovieBox">
                             @item.TimeStart.ToString("HH:mm") - @item.TimeEnd.ToString("HH:mm")
                             @item.Movie.Name
-                            Seats left: (@item.SeatsLeft(item.BookedPatrons.Count(), item.Theater.TheaterCapacity) of @item.Theater.TheaterCapacity)
+                            Seats left: (@item.SeatsLeft(item.Patrons.Count(), item.Theater.TheaterCapacity) of @item.Theater.TheaterCapacity)
                         </div>
                     }
                     else
@@ -70,7 +75,7 @@
                         <div class="MovieBox FullMovie">
                             @item.TimeStart.ToString("HH:mm") - @item.TimeEnd.ToString("HH:mm")
                             @item.Movie.Name
-                            Seats left: (@item.SeatsLeft(item.BookedPatrons.Count(), item.Theater.TheaterCapacity) of @item.Theater.TheaterCapacity)
+                            Seats left: (@item.SeatsLeft(item.Patrons.Count(), item.Theater.TheaterCapacity) of @item.Theater.TheaterCapacity)
                             <span style="color: white;">[FULL]</span>
                         </div>
                     }
@@ -78,5 +83,5 @@
                 <hr />
             </div>
         }
-    </div>*@
+    </div>
 
