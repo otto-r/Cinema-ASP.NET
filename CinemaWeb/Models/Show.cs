@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -23,26 +25,28 @@ namespace CinemaWeb.Models
             Patrons = new List<Patron>();
         }
 
-        //Solve to see if theater is full. With a function maybe?
         public Show()
         {
 
         }
 
-        public void BookSeats(List<Patron> requestSeatsList)
+        [NotMapped, Required, Range(1, 12)]
+        public int bookingInteger { get; set; }
+
+        public void BookSeats([Required, Range(1, 12)] int seatsRequested)
         {
-            if ((Theater.TheaterCapacity - Patrons.Count) > requestSeatsList.Count)
+            if ((Theater.TheaterCapacity - Patrons.Count) > seatsRequested)
             {
-                foreach (var patron in requestSeatsList)
+                for (int i = 0; i < seatsRequested; i++)
                 {
-                    Patrons.Add(patron);
+                    Patrons.Add(new Patron());
                 }
             }
         }
 
-        public int SeatsLeft(int seatsTotal, int patronsInShowList)
+        public int SeatsLeft(int patronsBooked, int seatsTotal)
         {
-            return seatsTotal - patronsInShowList;
+            return seatsTotal - patronsBooked;
         }
 
         public int SeatsLeftNew()
