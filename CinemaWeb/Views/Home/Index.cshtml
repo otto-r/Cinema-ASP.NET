@@ -18,7 +18,7 @@
 </script>
 
 <h2>
-    Movies 
+    Movies
 </h2>
 <button onclick="displayDate()">Date</button>
 <button onclick="displaySeats()">Seats left</button>
@@ -29,19 +29,25 @@
         <div>
             @if (show.SeatsLeft(show.Patrons.Count(), show.Theater.TheaterCapacity) != 0)
             {
-            <div class="MovieBox">
-                @show.TimeStart.ToString("HH:mm") - @show.TimeEnd.ToString("HH:mm")
-                @show.Movie.Name
-                Seats left: (@show.SeatsLeftNew() of @show.Theater.TheaterCapacity)
-                <a asp-action="Booking" asp-route-id="@show.Id">Book</a>
-            </div>
+                <div class="MovieBox">
+                    @show.TimeStart.ToString("HH:mm") - @show.TimeEnd.ToString("HH:mm")
+                    @show.Movie.Name
+                    <div>
+                        Seats left: (@show.SeatsLeftNew() of @show.Theater.TheaterCapacity)
+                    </div>
+                    <div>Playing in Theater: @show.Theater.Name</div>
+                    <a asp-action="Booking" asp-route-id="@show.Id">Book</a>
+                </div>
             }
             else
             {
                 <div class="MovieBox FullMovie">
                     @show.TimeStart.ToString("HH:mm") - @show.TimeEnd.ToString("HH:mm")
                     @show.Movie.Name
-                    Seats left: (@show.SeatsLeftNew() of @show.Theater.TheaterCapacity)
+                    <div>
+                        Seats left: (@show.SeatsLeftNew() of @show.Theater.TheaterCapacity)
+                    </div>
+                    <div>Playing in Theater: @show.Theater.Name</div>
                     <span style="color: white;">[FULL]</span>
                 </div>
             }
@@ -61,19 +67,27 @@
             {
                 @if (@item.SeatsLeft(item.Patrons.Count(), item.Theater.TheaterCapacity) != 0)
                 {
-            <div class="MovieBox">
-                @item.TimeStart.ToString("HH:mm") - @item.TimeEnd.ToString("HH:mm")
-                @item.Movie.Name
-                Seats left: (@item.SeatsLeftNew() of @item.Theater.TheaterCapacity)
-                <a asp-action="Booking" asp-route-id="@item.Id">Book</a>
-            </div>
+                    <div class="MovieBox">
+                        @item.TimeStart.ToString("HH:mm") - @item.TimeEnd.ToString("HH:mm")
+                        @item.Movie.Name
+                        <div>
+                            Seats left: (@item.SeatsLeftNew() of @item.Theater.TheaterCapacity)
+                        </div>
+                        <div>Playing in Theater: @item.Theater.Name</div>
+
+
+                        <a asp-action="Booking" asp-route-id="@item.Id">Book</a>
+                    </div>
                 }
                 else
                 {
                     <div class="MovieBox FullMovie">
                         @item.TimeStart.ToString("HH:mm") - @item.TimeEnd.ToString("HH:mm")
                         @item.Movie.Name
-                        Seats left: (@item.SeatsLeftNew() of @item.Theater.TheaterCapacity)
+                        <div>
+                            Seats left: (@item.SeatsLeftNew() of @item.Theater.TheaterCapacity)
+                        </div>
+                        <div>Playing in Theater: @item.Theater.Name</div>
                         <span style="color: white;">[FULL]</span>
                     </div>
                 }
@@ -82,4 +96,3 @@
         </div>
     }
 </div>
-
